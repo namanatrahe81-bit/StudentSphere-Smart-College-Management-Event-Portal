@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentSphere | College Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+            <span>Student<span class="accent">Sphere</span></span>
+        </div>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <nav>
+            <button class="nav-item active" data-page="dashboard">▦ Dashboard</button>
+            <button class="nav-item" data-page="events">▣ College Events</button>
+            <button class="nav-item" data-page="students">♙ Students</button>
+            <button class="nav-item" data-page="registrations">☷ Registrations</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+                <div class="help-icon">✦</div>
+                <h3>StudentSphere</h3>
+                <p>Your college, connected.</p>
+            </div>
+            <button class="nav-item" id="themeToggle">◐ Change Theme</button>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+            <div>
+                <p class="top-eyebrow">COLLEGE MANAGEMENT SYSTEM</p>
+                <h2 id="pageTitle">Dashboard Overview</h2>
+            </div>
+
+            <div class="profile">
+                <div class="profile-avatar">SA</div>
+                <div class="profile-text">
+                    <strong>System Admin</strong>
+                    <span>Administrator</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="page active-page" id="dashboard">
+
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <span class="pill">✦ YOUR CAMPUS, CONNECTED</span>
+                    <h1>Manage your campus.<br><span>In one place.</span></h1>
+                    <p>Organize students, discover events, and build a more connected college community.</p>
+                    <button class="primary-btn" data-goto="events">Explore Events ↗</button>
+                </div>
+                <div class="banner-art" aria-hidden="true">
+                    <div class="art-circle circle-one"></div>
+                    <div class="art-circle circle-two"></div>
+                    <div class="art-card">
+                        <span>✦</span>
+                        <strong>Campus Life</strong>
+                        <small>Ideas become experiences.</small>
+                        <div class="art-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Dashboard Overview</h2>
+                    <p>Here's what's happening in your campus.</p>
+                </div>
+                <span class="live-label"><i></i> DEMO DASHBOARD</span>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-top"><span>Total Students</span><span class="stat-icon purple">♙</span></div>
+                    <h2 id="studentCount">0</h2>
+                    <p>Registered students</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top"><span>Total Events</span><span class="stat-icon blue">▣</span></div>
+                    <h2 id="eventCount">0</h2>
+                    <p>Campus activities</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top"><span>Registrations</span><span class="stat-icon green">✓</span></div>
+                    <h2 id="registrationCount">0</h2>
+                    <p>Event sign-ups</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top"><span>Departments</span><span class="stat-icon orange">⌘</span></div>
+                    <h2 id="departmentCount">0</h2>
+                    <p>Academic departments</p>
+                </article>
+            </div>
+
+            <div class="content-grid">
+                <section class="panel">
+                    <div class="panel-heading">
+                        <div><h3>Upcoming Events</h3><p>Discover what's coming up.</p></div>
+                        <button class="text-btn" data-goto="events">View all →</button>
+                    </div>
+                    <div id="dashboardEvents" class="event-list"></div>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-heading">
+                        <div><h3>Quick Actions</h3><p>Get things done faster.</p></div>
+                    </div>
+
+                    <button class="quick-action" data-action="add-student">
+                        <span class="quick-icon purple">♙</span>
+                        <span><strong>Add Student</strong><small>Create a student record</small></span>
+                        <b>→</b>
+                    </button>
+
+                    <button class="quick-action" data-action="add-event">
+                        <span class="quick-icon blue">▣</span>
+                        <span><strong>Create Event</strong><small>Plan a campus activity</small></span>
+                        <b>→</b>
+                    </button>
+
+                    <button class="quick-action" data-goto="registrations">
+                        <span class="quick-icon green">☷</span>
+                        <span><strong>View Registrations</strong><small>Manage event sign-ups</small></span>
+                        <b>→</b>
+                    </button>
+                </section>
+            </div>
+
+            <p class="footer-note">StudentSphere © 2026 · BSc Computer Science Field Project</p>
+        </section>
+
+        <section class="page" id="events">
+            <div class="section-heading page-heading">
+                <div><h2>College Events</h2><p>Explore and register for campus activities.</p></div>
+                <button class="primary-btn" data-action="add-event">+ Create Event</button>
+            </div>
+
+            <div class="toolbar">
+                <input id="eventSearch" type="search" placeholder="Search events...">
+                <select id="eventFilter">
+                    <option value="All">All categories</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Sports">Sports</option>
+                </select>
+            </div>
+
+            <div id="allEvents" class="events-grid"></div>
+            <p class="footer-note">StudentSphere · College Events</p>
+        </section>
+
+        <section class="page" id="students">
+            <div class="section-heading page-heading">
+                <div><h2>Student Directory</h2><p>Manage student information and departments.</p></div>
+                <button class="primary-btn" data-action="add-student">+ Add Student</button>
+            </div>
+
+            <div class="toolbar">
+                <input id="studentSearch" type="search" placeholder="Search by name, email or roll number...">
+                <button class="secondary-btn" id="exportStudents">Export CSV ↓</button>
+            </div>
+
+            <div class="panel table-panel">
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>STUDENT</th><th>ROLL NUMBER</th><th>DEPARTMENT</th><th>EMAIL</th><th>ACTION</th></tr></thead>
+                        <tbody id="studentTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="registrations">
+            <div class="section-heading page-heading">
+                <div><h2>Event Registrations</h2><p>Review students registered for college events.</p></div>
+                <button class="secondary-btn" id="exportRegistrations">Export CSV ↓</button>
+            </div>
+
+            <div class="panel table-panel">
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>STUDENT</th><th>EVENT</th><th>DATE</th><th>STATUS</th><th>ACTION</th></tr></thead>
+                        <tbody id="registrationTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-heading">
+            <div><span class="modal-kicker">STUDENTSPHERE</span><h2 id="modalTitle">Create Record</h2></div>
+            <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+        </div>
+        <form id="modalForm">
+            <div id="formFields" class="form-fields"></div>
+            <div class="modal-actions">
+                <button type="button" class="secondary-btn" id="cancelModal">Cancel</button>
+                <button type="submit" class="primary-btn">Save Record ↗</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
